@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+}
+
+h1, h3, input, #low, #high{
+  padding: 20px;
+}
+
+#result{
+  margin: 0 auto;
+  text-align: center;
+  width: 450px;
+}
+
+#low, #high {
+display: block; 
+margin-left: auto; 
+margin-right: auto; 
+font-size: 40px; 
+padding: 50px; 
+background-color: red; 
+width: 450px; 
+height: 600px;
+margin-bottom: 10px;
+}
+
+input, textarea{
+  background-color: lightblue;
+  display: block;
+  margin-left: auto; 
+  margin-right: auto; 
+  padding-bottom: 20px;
+  text-align: center;
+}

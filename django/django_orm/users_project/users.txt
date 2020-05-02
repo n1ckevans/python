@@ -1,0 +1,16 @@
+apps.users_app.models import * 
+user1 = User(first_name="Name1", last_name="Last1", email="Email1", age=18) 
+user1.save()
+user2 = User(first_name="Name2", last_name="Last2", email="Email2", age=20) 
+user2.save()  
+user3 = User(first_name="Name3", last_name="Last3", email="Email3", age=30)  
+user3.save()  
+all_users = User.objects.all() 
+last_user = User.objects.last() 
+first_user = User.objects.first() 
+updated_user3 = User.objects.get(id=3) 
+updated_user3.last_name = "Pancakes" 
+deleted_user = User.objects.get(id=2)  
+deleted_user.delete()
+all_users.order_by("first_name")  
+all_users.order_by("-first_name")  

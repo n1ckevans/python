@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Message Board</title>
+  {% load static %}	
+    <link rel="shortcut icon" href="{% static 'skate_spots_app/img/favicon.ico' type='image/x-icon' %}">
+  <link href="/YOUR_PATH/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+  <div class="container">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+
+    <nav class="navbar navbar-expand navbar-dark rounded bg-primary">
+      <h1 class="navbar-brand">What up {{user.first_name}}?</h1>
+      <div class="collapse navbar-collapse order-0 dual-collapse2" id="navbarSupportedContent">
+
+        <span class="navbar-text text-white font-weight-bold mr-auto"></span>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <!-- change to add route -->
+            <a class="nav-link" href="/home">Add A Spot</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/wall">Message Board</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="text-danger text-center">
+        {% if messages %}
+        <ul class="list-unstyled d-inline-block">
+          {% for message in messages %}
+          <li class="text-left">{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </section>
+
+    <div class="card bg-dark text-white">
+        <div class="card-body text-center">
+          <span class="logo_title mt-5 text-primary h3">Update your profile</span>
+          <form action="/update/{{user.id}}" method="post">
+            {% csrf_token %}
+            <div class="input-group form-group mt-2">
+                <div class="d-block p-2 bg-dark text-white">
+                    <span>First Name:</span>
+                  </div> 
+              <input type="text" name="first_name" class="form-control rounded" placeholder="{{user.first_name}}">
+            </div>
+            <div class="input-group form-group">
+                <div class="d-block p-2 bg-dark text-white">
+                    <span>Last Name:</span>
+                  </div> 
+              <input type="text" name="last_name" class="form-control rounded" placeholder="{{user.last_name}}">
+            </div>
+            <div class="input-group form-group">
+               <div class="d-block p-2 bg-dark text-white">
+                 <span>Birthday:</span>
+               </div> 
+                <input type="date" name="birthday" class="form-control rounded">
+            </div>
+            <div class="input-group form-group">
+                <div class="d-block p-2 bg-dark text-white">
+                    <span>Password:</span>
+                  </div> 
+              <input type="password" name="password" class="form-control rounded" placeholder="Password">
+            </div>
+            <div class="input-group form-group">
+                <div class="d-block p-2 bg-dark text-white">
+                    <span>Confirm:</span>
+                  </div> 
+              <input type="password" name="confirm_password" class="form-control rounded" placeholder="Confirm Password">
+            </div>
+            <div class="input-group form-group">
+                <div class="d-block p-2 bg-dark text-white">
+                    <span>Profile picture:</span>
+                  </div> 
+                <input type="file" name="photo" class="form-control rounded">
+              </div>
+
+            <div class="form-group">
+              <input type="submit" name="btn" value="Update" class="btn btn-outline-primary float-left login_btn">
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+
+
+
+
+  </div>
+</body>
+
+</html>

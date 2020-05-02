@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ninja Gold</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body cz-shortcut-listen="true">
+  <div id="container">
+    <h3 id="gold" class="card px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">Your gold: {{ request.session.gold }}</h3>
+
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body text-center">
+            <h1 class="card-title">Farm</h1>
+            <h2 class="card-title">(Earns 10-20 gold)</h2>
+            <form action="/process_money" method="post">
+              {% csrf_token %}
+              <input class="btn btn-warning" type="submit" name="farm" value="Find Gold!"/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body text-center">
+            <h1 class="card-title">Cave</h1>
+            <h2 class="card-title">(Earns 5-10 gold)</h2>
+            <form action="/process_money" method="post">
+              {% csrf_token %}
+              <input class="btn btn-warning" type="submit" name="cave" value="Find Gold!"/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body text-center">
+            <h1 class="card-title">House</h1>
+            <h2 class="card-title">(Earns 2-5 gold)</h2>
+            <form action="/process_money" method="post">
+              {% csrf_token %}
+              <input class="btn btn-warning" type="submit" name="house" value="Find Gold!"/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body text-center">
+            <h1 class="card-title">Casino</h1>
+            <h2 class="card-title">(Earns or Loses 0-50 gold)</h2>
+            <form action="/process_money" method="post">
+              {% csrf_token %}
+              <input class="btn btn-warning" type="submit" name="casino" value="Find Gold!"/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="card px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="info">
+      <p id="information" >Activities:</p>
+  
+    <div id="activities">
+      
+         
+          <p class="result"> {{ request.session.activities| safe }}</p>
+    </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

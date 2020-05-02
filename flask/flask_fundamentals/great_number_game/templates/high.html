@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='wrong.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Too High</title>
+
+</head>
+
+<body>
+    <div id="container">
+      <h1>Welcome to the Great Number Game!</h1>
+      <h3>I am thinking of a number between 1 and 100</h3>
+      <h3>Take a guess!</h3>
+      <div id="result">
+          <p id="high">
+           
+            {{ request.form['guess'] }} is too high! Guess again
+            <br>
+            You have {{ 5 - count }} attemps remaining
+         
+          </p>
+          <form action="/user_guess" method="POST">
+           
+              <textarea name="guess"></textarea>
+            <br>
+            <input name="submit" type="submit">
+          </form>
+        
+      </div>
+      
+    </div>
+  </body>
+
+
+
+</html>

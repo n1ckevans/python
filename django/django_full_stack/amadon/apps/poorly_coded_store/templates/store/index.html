@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Amadon</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body class="bg-dark text-white">
+  <div>
+    <div class="card-header mx-auto bg-dark text-center">
+        <h1 class="logo_title mt-5 h1">Amadon Store</h1>
+    </div>
+   <div>
+    <table class="table text-center table-hover bg-dark text-white">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in all_products %}
+            <tr>
+                <form action="/checkout" method="post">
+                    {% csrf_token %}
+                    <td>{{product.description}}</td>
+                    <td><input type="hidden" name="product" value="{{product.id}}">{{product.price}}</td>
+                    <td><select name="quantity">
+                        <option value="1">1</option>              
+                        <option value="2">2</option>              
+                        <option value="3">3</option>              
+                    </select></td>
+                    <td><input type="submit" value="Buy!"></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+  </div>
+</body>
+</html>

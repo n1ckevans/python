@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books Home</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+  <div class="container">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+        <a class="navbar-brand" href="/home">Welcome {{ user.first_name }}</a>
+        <div class="collapse navbar-collapse order-0 dual-collapse2" id="navbarSupportedContent">
+          
+          <span class="navbar-text text-white font-weight-bold mr-auto"></span>
+          
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="/">Add Book and Preview</a>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+  
+        </div>
+      </nav>
+
+
+    
+
+      <div class="card-deck">
+
+      
+        
+          <div class="card bg-dark text-white"> 
+              <h4 class="mt-3">Add a New Book Title and a Review:</h4>
+
+            <form action="/add_book_and_review" id="add_book_and_review" method="post">
+              <div class="input-group form-group mt-3">
+                  <div class="d-block p-2 bg-dark text-white">
+                      {% csrf_token %}
+                    <span>Title:</span>
+                  </div> 
+                   <textarea name="title" id="title" cols="62" rows="1"></textarea>
+               </div>
+
+               <div class="input-group form-group mt-3">
+                  <div class="d-block p-2 bg-dark text-white">
+                    <span>Author:</span>
+                  </div> 
+               </div>
+               <div class="input-group form-group ml-4 mt-3">
+                  <div class="d-block p-2 bg-dark text-white">
+                  <span>Choose from the list: </span>
+                 
+                  <select name="author" form="add_book">
+                      {% for author in authors %}
+                      <option value="{{author.id}}">{{author.name}}</option>
+                      {% endfor %}
+                    </select>
+
+                  <br>
+                  <br>
+                
+                  <div class="d-inline-block p-2 bg-dark text-center text-white">
+                        <span>Or add a new author:</span>
+                      </div>
+                       <textarea name="author" id="author" cols="44" rows="1"></textarea>
+                   </div>
+
+               </div>
+
+
+               <div class="input-group form-group mt-3">
+                  <div class="d-block p-2 bg-dark text-white">
+                    <span>Review:</span>
+                  </div> 
+                   <textarea name="review" cols="60" rows="5"></textarea>
+               </div>
+
+
+               <div class="input-group form-group ml-4 mt-3">
+                  <div class="d-block p-2 bg-dark text-white">
+                  <span class="mr-1">Rating: </span>
+                  
+                  <select name="rating" form="add_book_and_review">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">4</option>
+                    </select>
+                    <span class="ml-1">Stars</span>
+                  </div>
+                </div>
+
+                <div class="input-group form-group ml-4 mt-1">
+                    <div class="d-block p-2 bg-dark text-white">
+                <input class="btn btn-primary" type="submit" value="Add Book and Review">
+              </div>
+            </div>
+            </form>
+
+            <!-- <div class="card-body text-center">
+              <span class="logo_title mt-5">Login</span>
+              <form action="/login" method="post">
+                {% csrf_token %}
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input type="text" name="email" class="form-control" placeholder="Email">
+                </div>
+    
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                  </div>
+                  <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+    
+                <div class="form-group">
+                  <input type="submit" name="btn" value="Login" class="btn btn-outline-primary float-left login_btn">
+                </div>
+    
+              </form>
+            </div> -->
+          </div> 
+          
+            <!-- <div class="card-body bg-dark text-white text-center">
+              <span class="logo_title mt-5">Register</span>
+              <form action="/register" method="post">
+                {% csrf_token %}
+                <div class="input-group form-group">
+                  <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                </div>
+                <div class="input-group form-group">
+                  <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="input-group form-group">
+                  <input type="text" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="input-group form-group">
+                   <div class="d-block p-2 bg-dark text-white">
+                     <span>Birthday:</span>
+                   </div> 
+                    <input type="date" name="birthday" class="form-control">
+                </div>
+                <div class="input-group form-group">
+                  <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="input-group form-group">
+                  <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
+                </div>
+    
+                <div class="form-group">
+                  <input type="submit" name="btn" value="Register" class="btn btn-outline-primary float-left login_btn">
+                </div>
+    
+              </form>
+            </div> -->
+          </div>
+      
+
+
+
+
+  </div>
+</body>
+
+</html>

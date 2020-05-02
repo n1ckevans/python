@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dojo Survey</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+
+  <h1>Dojo Survey</h1>
+  <h3>Fill in the survey below</h3>
+  <form action='/result' method='post'>
+    Your Name: <input type='text' name='name'>
+    <br>
+    Dojo Location: <input type='text' name='location' list='locations'>
+    <datalist id="locations">
+      <option value="Orange County">
+      <option value="Los Angeles">
+    </datalist>
+    <br>
+    Favorite Language: <input type='text' name='language' list="languages">
+    <datalist id="languages">
+      <option value="Python">
+      <option value="JavaScript">
+    </datalist>
+    <br>
+    <br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other"> Other
+<br>
+<br>
+<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+<input type="checkbox" name="vehicle" value="Car"> I have a car<br>
+<input type="checkbox" name="vehicle" value="Boat"> I have a boat<br>
+<input type="checkbox" name="vehicle" value="Skateboard" checked> Skate or Die!
+
+<br>
+<br>
+    <label> Comments (optional):</label><br>
+    <textarea id="comments" name="comments" rows="10" cols="35">
+    </textarea>
+    <br>
+    <input type='submit' value='Submit Survey'>
+  </form>
+
+
+</body>
+
+</html>

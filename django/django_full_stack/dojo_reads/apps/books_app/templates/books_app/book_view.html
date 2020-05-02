@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books Home</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+  <div class="container">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+        <div class="collapse navbar-collapse order-0 dual-collapse2" id="navbarSupportedContent">
+          
+          <span class="navbar-text text-white font-weight-bold mr-auto"></span>
+          
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="/">Add Book and Preview</a>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+  
+        </div>
+      </nav>
+
+      <div class="card-deck">
+          <div class="card bg-dark text-white"> 
+              <h1>{{book.title}}</h1>
+              <h3>Author: {{book.authors.name}}</h3>
+            <br>
+            <h2>Reviews:</h2>
+            {% for review in books %}
+            <div class="card bg-dark text-white"> 
+              {{book.review.rating}}
+              {{book.review.review}}
+              {{book.review.user}}
+              {{book.review.created_at}}
+            </div>
+            {% endfor %}
+
+          </div>
+      </div>
+
+    
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+  </div>
+</body>
+
+</html>

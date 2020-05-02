@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books & Authors</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body class="bg-dark">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="/authors">View All Authors</a>
+    <button class="btn btn-outline-primary float-right login_btn" type="button" data-toggle="collapse"
+      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <a class="navbar-brand" href="/">View All Books</a>
+    <button class="btn btn-outline-primary float-right login_btn" type="button" data-toggle="collapse"
+      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+  </nav>
+  <div class="container">
+    <div class="card card-login mx-auto text-center bg-dark text-white">
+      <div class="card-header mx-auto bg-dark text-left">
+        <span class="logo_title mt-5 h1">Book Title: {{ book.title }}</span>
+      </div>
+      <div class="card-body text-left">
+        <span class="logo_title mt-5 h3">Book ID: {{ book.id }}</span>
+      </div>
+      <div class="card-body text-left">
+        <span class="logo_title mt-5 h3">Description:</span>
+        <br>
+        <p class="logo_title mt-5 h5 text-white">{{ book.desc }}</p>
+      </div>
+      <div class="card-body text-left">
+        <span class="logo_title mt-5 h3">Authors:</span>
+        <br>
+        <ul>
+          {% for authors in book.authors.all %}
+          <li class="text-white">{{ authors.first_name}} {{ authors.last_name}} </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="dropdown text-left m-3">
+        <h5 value="select">Select an Author to add</h5>
+        <form action="/books/{{book.id}}" method="POST">
+          {% csrf_token %}
+          <select name="author" class="text-primart">
+            {% for author in authors %}
+            <option value="{{ author.id }}" name="author">{{ author.first_name}} {{ author.last_name}}</option>
+            {% endfor %}
+          </select>
+          <input class="btn btn-primary" type="submit">
+        </form>
+      </div>
+    </div>
+</body>
+</html>

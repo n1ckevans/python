@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='leaderboard.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Leaderboard</title>
+
+</head>
+
+<body>
+    <h1>Leaderboard</h1>
+  <div id="container">
+   
+   
+   {% for winner in winners| reverse %}
+  <p>Name: {{ winner['name'] }} Attempts: {{ winner['count'] }}</p>
+  {% endfor %}
+
+      <form action="/reset" method="POST">
+        <input value="Play again" name="reset" type="submit">
+      </form>
+
+
+
+    </div>
+  </div>
+</body>
+
+
+
+</html>

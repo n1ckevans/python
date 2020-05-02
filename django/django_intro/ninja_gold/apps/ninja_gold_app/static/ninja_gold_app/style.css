@@ -1,0 +1,51 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+.i-block {
+  display: inline-block;
+}
+
+p {
+  width: 64%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+textarea {
+  margin-top: 10px;
+  margin-right: 100%;
+}
+
+.choices{
+  margin-top: 50px;
+  margin-right: 100px;
+  border: 1px solid white;
+}
+
+h1, h2, input {
+  padding: 10px;
+  text-align: center;
+}
+
+input {
+  margin-left: 30%;
+}
+
+#activities {
+  margin-left: 10px;
+  width: 600px;;
+  height: 200px;
+}
+
+#gold_count {
+  text-align: center;
+}
+
+p#result {
+  width: 100%;
+}

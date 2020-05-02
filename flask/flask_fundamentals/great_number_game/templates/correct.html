@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='correct.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Correct</title>
+
+</head>
+
+<body>
+  <div id="container">
+   
+    <div id="result">
+
+        <p id="win">
+            
+            {{ number }} was the number!
+            <br>
+            It took you {{ count }} guesses
+          </p>
+
+          <h2>Enter your name to add your score to the leaderboard!</h2>
+
+          <form id="leaderboard" action="/leaderboard" method="POST">
+            Name: <input type='text' name='name'>
+            <br>
+            <input type='submit' value='Add to leaderboard'>
+          </form>
+
+
+      <form action="/reset" method="POST">
+        <input value="Play again" name="reset" type="submit">
+      </form>
+
+
+
+    </div>
+  </div>
+</body>
+
+
+
+</html>

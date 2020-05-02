@@ -1,0 +1,203 @@
+Last login: Mon Sep  2 08:36:06 on ttys000
+[NicKenzie]:~ NicKenzie$ pip3 list
+Package    Version 
+---------- --------
+certifi    2019.3.9
+pip        18.1    
+setuptools 40.6.2  
+You are using pip version 18.1, however version 19.2.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[NicKenzie]:~ NicKenzie$ cd Desktop/coding/coding-dojo/
+[NicKenzie]:coding-dojo NicKenzie$ ls
+Algorithm_Book_(02-09-2016).pdf	pre_course_work			skills_fund
+enrollment_info			python_stack			web_fundamentals
+[NicKenzie]:coding-dojo NicKenzie$ cd python_stack/
+[NicKenzie]:python_stack NicKenzie$ ls
+django		flask		my_environments	python
+[NicKenzie]:python_stack NicKenzie$ cd my_environments/
+[NicKenzie]:my_environments NicKenzie$ python3 -m venv py3Env
+ls
+[NicKenzie]:my_environments NicKenzie$ ls
+py3Env
+[NicKenzie]:my_environments NicKenzie$ source py3Env/bin/activate
+(py3Env) [NicKenzie]:my_environments NicKenzie$ pip list
+Package    Version
+---------- -------
+pip        18.1   
+setuptools 40.6.2 
+You are using pip version 18.1, however version 19.2.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(py3Env) [NicKenzie]:my_environments NicKenzie$ pip install --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/30/db/9e38760b32e3e7f40cce46dd5fb107b8c73840df38f0046d8e6514e675a1/pip-19.2.3-py2.py3-none-any.whl (1.4MB)
+    100% |████████████████████████████████| 1.4MB 530kB/s 
+Installing collected packages: pip
+  Found existing installation: pip 18.1
+    Uninstalling pip-18.1:
+      Successfully uninstalled pip-18.1
+Successfully installed pip-19.2.3
+(py3Env) [NicKenzie]:my_environments NicKenzie$ pip list
+Package    Version
+---------- -------
+pip        19.2.3 
+setuptools 40.6.2 
+(py3Env) [NicKenzie]:my_environments NicKenzie$ deactivate
+[NicKenzie]:my_environments NicKenzie$ clear
+
+
+
+
+
+[NicKenzie]:my_environments NicKenzie$ source py3Env/bin/activate
+(py3Env) [NicKenzie]:my_environments NicKenzie$ pip list
+Package    Version
+---------- -------
+pip        19.2.3 
+setuptools 40.6.2 
+(py3Env) [NicKenzie]:my_environments NicKenzie$ deactivate
+[NicKenzie]:my_environments NicKenzie$ pip3 list
+Package    Version 
+---------- --------
+certifi    2019.3.9
+pip        18.1    
+setuptools 40.6.2  
+You are using pip version 18.1, however version 19.2.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[NicKenzie]:my_environments NicKenzie$ source py3Env/bin/activate
+(py3Env) [NicKenzie]:my_environments NicKenzie$ pip install Django
+Collecting Django
+  Downloading https://files.pythonhosted.org/packages/94/9f/a56f7893b1280e5019482260e246ab944d54a9a633a01ed04683d9ce5078/Django-2.2.5-py3-none-any.whl (7.5MB)
+     |████████████████████████████████| 7.5MB 2.2MB/s 
+Collecting sqlparse (from Django)
+  Downloading https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Collecting pytz (from Django)
+  Downloading https://files.pythonhosted.org/packages/87/76/46d697698a143e05f77bec5a526bf4e56a0be61d63425b68f4ba553b51f2/pytz-2019.2-py2.py3-none-any.whl (508kB)
+     |████████████████████████████████| 512kB 5.0MB/s 
+Installing collected packages: sqlparse, pytz, Django
+Successfully installed Django-2.2.5 pytz-2019.2 sqlparse-0.3.0
+(py3Env) [NicKenzie]:my_environments NicKenzie$ pip freeze
+Django==2.2.5
+pytz==2019.2
+sqlparse==0.3.0
+(py3Env) [NicKenzie]:my_environments NicKenzie$ cd ~/Desktop
+(py3Env) [NicKenzie]:Desktop NicKenzie$ pip freeze > requirements.txt
+(py3Env) [NicKenzie]:Desktop NicKenzie$ ls
+Screen Shot 2019-09-02 at 8.38.33 AM.png	requirements.txt
+coding						torrents
+games						wedding
+media						work
+(py3Env) [NicKenzie]:Desktop NicKenzie$ open requirements.txt 
+(py3Env) [NicKenzie]:Desktop NicKenzie$ pip uninstall Django
+Uninstalling Django-2.2.5:
+  Would remove:
+    /Users/mackenzieslattery/Desktop/coding/coding-dojo/python_stack/my_environments/py3Env/bin/django-admin
+    /Users/mackenzieslattery/Desktop/coding/coding-dojo/python_stack/my_environments/py3Env/bin/django-admin.py
+    /Users/mackenzieslattery/Desktop/coding/coding-dojo/python_stack/my_environments/py3Env/lib/python3.7/site-packages/Django-2.2.5.dist-info/*
+    /Users/mackenzieslattery/Desktop/coding/coding-dojo/python_stack/my_environments/py3Env/lib/python3.7/site-packages/django/*
+Proceed (y/n)? y
+  Successfully uninstalled Django-2.2.5
+(py3Env) [NicKenzie]:Desktop NicKenzie$ pip show Django
+(py3Env) [NicKenzie]:Desktop NicKenzie$ pip search Flask
+Flask-SimpleMDE (0.3.0)     - Flask-SimpleMDE - a Flask extension for SimpleMDE
+Flask-Pure (0.5)            - Flask-Pure - a Flask extension for Pure.css
+Flask-OrientDB (0.1)        - A Flask extension for using OrientDB with Flask
+sockjs-flask (0.3)          - SockJs for Flask
+Flask-Stripe (0.1.0)        - Flask-Stripe
+Flask-Quik (0.1.1)          - Quik for Flask
+Flask-BDEA (0.1.0)          - Flask-BDEA
+Flask-GripControl (0.0.1)   - Flask GripControl
+Flask-SRI (0.1.0)           - Flask-SRI
+Flask-ElasticUtils (0.1.7)  - ElasticUtils for Flask
+Flask-PubSub (0.1.0)        - Flask-PubSub
+Flask-Waitress (0.0.1)      - Flask Waitress
+flask-helloworld (1.0.0)    - Flask Helloworld
+Flask-Helper (0.19)         - Flask Helper
+flask-ws (0.0.1.0)          - Websocket for flask.
+Flask-SPF (0.0.0)           - Flask-SPF
+flask-toolbox (0.0.2)       - A flask toolbox.
+Flask-Turbolinks (0.2.0)    - Turbolinks for Flask.
+Flask-FileRev (0.1.0)       - Flask-FileRev
+Flask-Shopify (0.2)         - Shopify Flask
+flask-ypaginate (0.1.3)     - Pagination for Flask
+Flask-Mustache (0.4.1)      - Mustache for Flask
+Flask-Chargebee (0.0.1)     - Flask-Chargebee
+Flask-Keen (0.1.0)          - Flask-Keen
+Flask-NextCaller (0.1.0)    - Flask-NextCaller
+Flask-AutoIndex (0.6.4)     - The mod_autoindex for Flask
+Flask-FontAwesome (0.1.2)   - FontAwesome for Flask
+Flask-Intercom (0.1.0)      - Flask-Intercom
+Flask-Watson (0.1.0)        - Flask-Watson
+Flask-Ext (0.1)             - Extensions of Flask
+Flask-TaskTiger (0.0.1)     - Flask TaskTiger
+Flask-Weixin (0.5.0)        - Weixin for Flask.
+Flask-OAuthlib (0.9.5)      - OAuthlib for Flask
+Fifty-Flask (1.4.0)         - Flask enhancements.
+Flask-Gears (0.2)           - Gears for Flask
+Flask-Clearbit (0.1.0)      - Flask-Clearbit
+flask-zs (0.0.18)           - A helpers for Flask.
+Flask-GeoIP (0.1.3)         - Flask-GeoIP -------------  Simple Flask extension for pygeoip.
+airbrake-flask (1.0.7)      - airbrake-flask - Airbrake client for Python Flask
+Flask-Diced (0.3)           - Flask-Diced - CRUD views generator for Flask
+flask-myapi (0.1)           - Flask-MyAPI - RESTful support library for Flask
+Flask-LoginManager (1.1.6)  - Flask-Loginmanager supports multiple roles and permissions for Flask, inspired by
+                              Flask-Login
+Flask-RESTive (0.0.3)       - Flask RESTive is a REST API Flask extension based on Flask-RESTful & Marshmallow.
+Flask-FlatPagesCut (0.5.1)  - Flask-FlatPagesCut is fork Flask-FlatPages (Provides flat static pages to a Flask
+                              application)
+flask-lesscss (0.9.1)       - A small Flask extension that adds LessCSS support to Flask.
+flask-stylus2css (0.1)      - A small Flask extension that adds Stylus support to Flask.
+flask-shell (0.1.3)         - Flask extension to improve shell command for the Flask CLI.
+flask-coffee2js (0.1.2)     - A small Flask extension that adds CoffeScript support to Flask.
+Flask-Collect (1.3.2)       - Flask-Collect -- Collect static files in Flask application
+flask-filters (0.3)         - The Flask Filter to use with flask-restful and Relational DB
+Flask-Shelve (0.1.1)        - Shelve support for Flask
+Flask-OpenID (1.2.5)        - OpenID support for Flask
+Flask-Edits (0.8)           - Editable Content in Flask
+Flask-CKEditor (0.4.3)      - CKEditor integration for Flask.
+Flask-Triangle (0.5.4)      - Integration of AngularJS and Flask.
+Flask-Funnel (0.1.10)       - Asset management for Flask.
+Flask-Breve (0.2)           - Breve templating with Flask
+Flask-mongobit (0.1.2)      - MongoBit support in Flask
+flask-logsocketio (0.1.4)   - Flask LogSocketIo module
+flask-iMail (0.1)           - Mailgun integration for Flask.
+Flask-ZMQ (0.1.2)           - Flask extension for ZMQ
+Flask-wechatpy (0.1.3)      - wechatpy for flask extension
+Flask-Vises (2.1.4)         - A Flask scaffold library
+Flask-PyFCM (0.1.1)         - Flask extension for PyFCM
+Flask-sshtunnel (0.1b2)     - sshtunnel extension for flask
+Flask-Flarf (0.0.5)         - Flask request filtering
+flask-tat (0.0.10)          - Flask TAT client
+Flask-Failsafe (0.2)        - A failsafe for the Flask reloader
+flask-now (0.1.5)           - Flask App Generator
+flask-blitzdb (0.1)         - Flask extension for blitzdb
+Flask-RBAC (0.3.0)          - RBAC support for Flask
+castle-flask (0.0.1)        - A Flask client for Castle.io
+flask-handlers (0.0.1)      - Handlers for Flask applications
+Flask-Postmark (0.2.0)      - Postmark Flask extension
+flask-keycloak (1.1.0)      - flask integration with keycloak
+Flask-Htmldoom (0.1.2)      - htmldoom integration for Flask
+Flask-PRBAC (0.1.3)         - RBAC support for Flask
+Flask-CassandraDB (0.0.1)   - connect cassandra to flask
+Flask-Zero (0.9.6)          - Qiniu Storage for Flask
+Flask-CuttlePool (0.2.0)    - A Flask extension for CuttlePool
+Flask-SaeStorage (0.9.0)    - SAE Storage for Flask
+Flask-Navigation (0.2.0)    - The navigation of Flask application.
+Flask-Passlib (0.1)         - Flask extension for passlib
+flask-serial (1.1.0)        - Flask extension for the Serial
+flask-discoverer (0.1.4)    - Flask API autodiscovery
+flask-snow (0.2.8)          - Pysnow extension for Flask
+Flask-Triangle3 (0.5.3)     - Integration of AngularJS and Flask.
+Flask-Slack (0.1.5)         - Slack extension for Flask.
+Flask-Autodoc (0.1.2)       - Documentation generator for flask
+Flask-Enterprise (1.0)      - Enterprise capabilities for Flask
+Flask-CAS (1.0.1)           - Flask extension for CAS
+Flask-SAML (0.4.3)          - Flask SAML integration
+Flask-Testing (0.7.1)       - Unit testing for Flask
+nailpack-flask (0.1.0)      - Flask support for nails
+flask-authentic (0.0.11)    - Flask Authentic Extension
+Flask-Avatar (0.1.3)        - To generate avatar for flask
+flask-adh (0.1)             - flask admin antd
+Flask-Sixpack (0.0.1)       - Flask wrapper for Sixpack
+Flask-Latch (0.1.0)         - Latch extension for Flask
+Flask-Storm (0.2.0)         - Storm integration for Flask.
+(py3Env) [NicKenzie]:Desktop NicKenzie$ 

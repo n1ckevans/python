@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+}
+
+h1, h3, form, textarea{
+  padding: 20px;
+}
+
+input, textarea {
+  margin: 10px;
+  background-color: lightblue;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='correct.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Correct</title>
+
+</head>
+
+<body>
+  <div id="container">
+   
+  
+
+      
+           
+          <h1>You lose!</h1>
+          <h2>Better luck next time</h2>
+          <h3>Click below to try again</h3> 
+
+      <form action="/reset" method="POST">
+
+
+        <input value="Play again" name="reset" type="submit">
+      </form>
+  
+  </div>
+</body>
+
+
+
+</html>
